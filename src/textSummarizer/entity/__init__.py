@@ -14,14 +14,18 @@ class DataValidationConfig:
     STATUS_FILE: str
     ALL_REQUIRED_FILES: list
 
+
 @dataclass(frozen=True)
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
     tokenizer_name: Path
+    
+
 
 @dataclass(frozen=True)
 class ModelTrainerConfig:
+    # Ensure paths are handled properly by using pathlib's Path
     root_dir: Path
     data_path: Path
     model_ckpt: Path
@@ -34,3 +38,4 @@ class ModelTrainerConfig:
     eval_steps: int
     save_steps: float
     gradient_accumulation_steps: int
+
