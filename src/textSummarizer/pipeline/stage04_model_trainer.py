@@ -2,7 +2,6 @@ from textSummarizer.config.configuration import ConfigurationManager
 from textSummarizer.components.model_trainer import ModelTrainer
 from textSummarizer.logging import logger
 
-
 class ModelTrainerTrainingPipeline:
     def __init__(self):
         pass
@@ -15,8 +14,9 @@ class ModelTrainerTrainingPipeline:
             # Get model trainer configuration
             model_trainer_config = config.get_model_trainer_config()
 
-            # Initialize and execute the ModelTrainer
-            model_trainer = ModelTrainer(config=model_trainer_config)
+            # Initialize the ModelTrainer with the configuration
+            model_trainer = ModelTrainer(config=model_trainer_config)  # Renamed the variable here to avoid confusion
+            
             logger.info("Starting model training...")
             model_trainer.train()
             logger.info("Model training completed successfully.")

@@ -12,3 +12,5 @@ class DataTransformationTrainingPipeline:
         data_transformation_config = config.get_data_transformation_config()
         data_transformation = DataTransformation(config=data_transformation_config)
         data_transformation.convert()
+
+        print(f"Methods in DataTransformation: {dir(data_transformation)}")

@@ -19,5 +19,5 @@ fastapi
 uvicorn
 Jinja2
 evaluate
-accelerate -U
+#accelerate -U
 -e .
